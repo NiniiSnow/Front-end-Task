@@ -1,0 +1,20 @@
+.main{
+    @apply w-full h-[7rem] flex  pb-4 gap-2 min-w-[17rem] bg-white
+}
+
+.image{
+    @apply w-full h-full rounded-lg
+}
+
+.text-container{
+    @apply flex items-center overflow-hidden 
+}
+
+.description{
+    @apply font-noto text-sm font-normal tracking-[-0.015rem]
+}
+.custom-dashed-border {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-image: repeating-linear-gradient(to right, #EEEEEE 0, #EEEEEE 10px, transparent 10px, transparent 20px) 1;
+}

@@ -1,0 +1,25 @@
+.main{
+    @apply w-full h-[5.25rem] flex flex-col items-start pb-4  min-w-[17rem] bg-white
+}
+
+.time-description{
+    @apply flex gap-2
+    
+}
+
+.time{
+    @apply text-custom-purple flex gap-1 font-noto text-xs font-bold items-center
+}
+
+.text-container{
+    @apply max-w-[17rem] max-h-[2.5rem] overflow-y-hidden
+}
+
+.description{
+    @apply font-noto text-sm font-normal tracking-[-0.015rem]
+}
+.custom-dashed-border {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-image: repeating-linear-gradient(to right, #EEEEEE 0, #EEEEEE 10px, transparent 10px, transparent 20px) 1;
+}

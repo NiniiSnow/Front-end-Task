@@ -1,0 +1,12 @@
+.main{
+    @apply w-[19.5rem] h-[12.75rem] rounded-[1.25rem]  flex flex-col  items-center px-3 pt-3 pb-4 gap-2 bg-white
+}
+
+.image{
+    @apply w-[18rem] h-[7.5rem] rounded-[1.25rem]
+}
+
+.description{
+    @apply font-noto font-medium text-base tracking-[-0.015rem]
+}
+
