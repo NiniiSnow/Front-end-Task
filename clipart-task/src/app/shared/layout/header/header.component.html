@@ -1,1 +1,21 @@
-<p class="font-noto">ჰედერი მუშაობს</p>
+<div class="h-[112px] bg-white w-full px-[304px] flex items-center ">
+    <div class="w-full flex justify-between">
+        <img src="assets/svg/logo.svg" alt="">
+        <div class="categories" #categories>
+            @for (category of categories$|async; track category.id) {
+                <button class="category "#children>
+                    {{ category.name }}
+                </button>
+              } 
+        </div>
+        <div class="flex">
+            <div class="flex">
+                <div class="socials">
+                    <img src="assets/svg/instagram-icon.svg"  class="w-8 h-8" alt="instagram-icon">
+                    <img src="assets/svg/facebook-icon.svg" class="w-8 h-8" alt="facebook-icon">
+                </div>
+                <app-search-input></app-search-input>
+            </div>
+        </div>
+    </div>
+</div>

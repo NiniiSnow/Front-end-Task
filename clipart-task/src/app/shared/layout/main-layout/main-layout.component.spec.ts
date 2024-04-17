@@ -8,8 +8,8 @@ describe('MainLayoutComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MainLayoutComponent]
-    });
+    imports: [MainLayoutComponent]
+});
     fixture = TestBed.createComponent(MainLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

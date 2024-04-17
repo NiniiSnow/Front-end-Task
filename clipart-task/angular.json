@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "clipart-task:build:production"
+              "buildTarget": "clipart-task:build:production"
             },
             "development": {
-              "browserTarget": "clipart-task:build:development"
+              "buildTarget": "clipart-task:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "clipart-task:build"
+            "buildTarget": "clipart-task:build"
           }
         },
         "test": {

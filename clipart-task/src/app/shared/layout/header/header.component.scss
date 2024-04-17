@@ -1,0 +1,11 @@
+.socials{
+    @apply flex items-center
+}
+
+.categories{
+    @apply flex gap-8 w-[584px] overflow-hidden 
+}
+
+.category{
+    @apply font-noto text-base font-medium tracking-[-0.015rem] text-custom-black-600 hover:text-custom-purple rounded-[10px] shrink-0 
+}

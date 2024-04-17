@@ -8,8 +8,8 @@ describe('MainSlidesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MainSlidesComponent]
-    });
+    imports: [MainSlidesComponent]
+});
     fixture = TestBed.createComponent(MainSlidesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

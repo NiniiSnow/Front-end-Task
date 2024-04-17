@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from 'src/app/shared/shared.module';
+
 import { DataService } from 'src/app/shared/services/data-service.service';
+import { HeaderComponent } from 'src/app/shared/layout/header/header.component';
 
 
 @Component({
@@ -9,15 +10,16 @@ import { DataService } from 'src/app/shared/services/data-service.service';
   standalone:true,
   imports:[
     CommonModule,
-    SharedModule
-  ],
+    HeaderComponent
+],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   private dataService = inject(DataService)
   constructor(){}
+  
   ngOnInit(): void {
-    this.dataService.getData().subscribe(res => console.log(res))
+    this.dataService.getData().subscribe()
   }
 }

@@ -9,6 +9,17 @@ module.exports = {
       colors: {
         'white': '#FFFFFF',
         'black': '#000000',
+        'custom-black':{
+          100: '#EEEEEE',
+          200: '#DCDCDC',
+          300: '#C0C0C0',
+          400: '#9A9D9F',
+          500: '#63686F',
+          600: '#657178', //these one edited
+          700: '#313B4F',
+          800: '#1F2940',
+          900: '#000000'
+        },
         'whitesmoke': "#f5f8ff",
         'dark-blue': "#000e5c",
         'light': "#9193ad",
