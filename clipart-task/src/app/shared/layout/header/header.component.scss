@@ -1,11 +1,31 @@
+.main{
+    @apply h-[112px] bg-white w-full px-4 sm:px-[57px] xl:px-[114px] 2xl:px-[304px] flex items-center 
+}
+
+
 .socials{
-    @apply flex items-center
+    @apply flex items-center w-[100px]
 }
 
 .categories{
-    @apply flex gap-8 w-[584px] overflow-hidden 
+    @apply gap-8 w-[584px] overflow-hidden  hidden lg:flex
 }
 
 .category{
     @apply font-noto text-base font-medium tracking-[-0.015rem] text-custom-black-600 hover:text-custom-purple rounded-[10px] shrink-0 
 }
+
+.other-button {
+    @apply hidden xl:flex items-center gap-2  font-noto text-base font-medium tracking-[-0.015rem]
+        text-custom-black-600 hover:text-custom-purple 
+        rounded-[10px] shrink-0   
+}
+.other-category{
+    @apply font-noto text-base font-medium tracking-[-0.015rem] text-custom-black-600 hover:text-custom-purple rounded-[10px] shrink-0 
+            hover:bg-primary-light w-full px-5 
+}
+
+.other-menu-tab{
+    @apply w-[180px] rounded-2xl bg-white flex flex-col gap-4 absolute top-9  shadow-custom-shadow-40 py-4
+}
+

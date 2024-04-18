@@ -1,21 +1,55 @@
-<div class="h-[112px] bg-white w-full px-[304px] flex items-center ">
+<div class="main">
     <div class="w-full flex justify-between">
         <img src="assets/svg/logo.svg" alt="">
+        <img src="assets/svg/rectangle.svg" alt="rectangle" class="hidden lg:block">
         <div class="categories" #categories>
             @for (category of categories$|async; track category.id) {
                 <button class="category "#children>
                     {{ category.name }}
                 </button>
               } 
-        </div>
+            </div>
+          @if(showOtherData){ 
+            <button
+            (click)="onToggle()"
+            class="other-button relative"
+             #other>
+              სხვა
+              <img src="assets/svg/arrow-down.svg" alt="arrow-down-icon"> 
+              @if(showOtherCategories){ 
+                <div class="other-menu-tab">
+                    @for (category of otherData; track category.id) {
+                        <button class="category">
+                            {{ category.name }}
+                        </button>
+                      } 
+                </div>
+              } 
+          </button>
+          }
         <div class="flex">
             <div class="flex">
                 <div class="socials">
                     <img src="assets/svg/instagram-icon.svg"  class="w-8 h-8" alt="instagram-icon">
                     <img src="assets/svg/facebook-icon.svg" class="w-8 h-8" alt="facebook-icon">
                 </div>
-                <app-search-input></app-search-input>
+                <div class="flex gap-2 items-center">
+                    <app-search-input></app-search-input>
+                    <button 
+                    (click)="onMenuToggle()"
+                    class="w-12 h-12 lg:hidden">
+                        <img src="assets/svg/burger-bar.svg" alt="hamburger" class="w-12 h-12">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+@if (menuOpen) {
+    <div class="absolute top-[112px]">
+        <app-mobile-menu></app-mobile-menu>
+    </div>
+}
+

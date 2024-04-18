@@ -1,0 +1,13 @@
+<div class=" h-screen w-screen bg-white px-4 sm:px-6  md:px-12 ">
+    <div class="flex flex-col items-start gap-8">
+        @for (category of categories$ | async ; track $index) {
+            <button class="category">
+                {{ category.name }}
+            </button>
+        }
+    </div>
+    <div class="flex items-center sm:hidden">
+        <img src="assets/svg/instagram-icon.svg"  class="w-8 h-8" alt="instagram-icon">
+        <img src="assets/svg/facebook-icon.svg" class="w-8 h-8" alt="facebook-icon">
+    </div>
+</div>

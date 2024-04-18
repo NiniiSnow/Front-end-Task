@@ -20,7 +20,7 @@ module.exports = {
           800: '#1F2940',
           900: '#000000'
         },
-        'whitesmoke': "#f5f8ff",
+        'primary-light': "#f5f8ff",
         'dark-blue': "#000e5c",
         'light': "#9193ad",
         'custom-purple': '#585EE3',
@@ -35,6 +35,10 @@ module.exports = {
           800: '#1F2940',
           900: '#131B35'
         }, 
+      },
+      boxShadow: {
+        'custom-shadow-1': '0 0 20px rgba(0, 0, 0, 0.1)', 
+        'custom-shadow-40': '0 0 40px rgba(0, 0, 0, 0.08)'
       }
     },
   },

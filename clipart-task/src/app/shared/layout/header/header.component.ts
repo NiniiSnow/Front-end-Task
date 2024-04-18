@@ -4,6 +4,7 @@ import { SearchInputComponent } from '../../components/search-input/search-input
 import { DataService } from '../../services/data-service.service';
 import { Observable } from 'rxjs';
 import { Category } from '../../models/models';
+import { MobileMenuComponent } from '../../components/mobile-menu/mobile-menu.component';
 
 @Component({
     selector: 'app-header',
@@ -12,22 +13,27 @@ import { Category } from '../../models/models';
     standalone: true,
     imports:[
         CommonModule,
-        SearchInputComponent
+        SearchInputComponent,
+        MobileMenuComponent
     ]
 })
 export class HeaderComponent implements OnInit, AfterViewInit{
     @ViewChild('categories') categories: ElementRef;
-    @ViewChildren('children') children!: QueryList<any>;
+    @ViewChildren('children') children!: QueryList<ElementRef>;
+    @ViewChild('other') other!: ElementRef;
+    private dataService = inject(DataService)
+    public categories$:Observable<Category[]>
+    public categoryData:Category[];
+    public otherData:Category[] = [];
+    public showOtherData:boolean = false;
+    public showOtherCategories:boolean = false ;
+    public menuOpen:boolean = false ;
+
 
     constructor(
         private cdr:ChangeDetectorRef
     ){}
 
-    private dataService = inject(DataService)
-    categories$:Observable<Category[]>
-
-    categoryData:any[]
-    remaining:any[] = []
 
     ngOnInit(): void {
         this.categories$ = this.dataService.getCategories();
@@ -45,7 +51,7 @@ export class HeaderComponent implements OnInit, AfterViewInit{
     }
 
     @HostListener('window:resize', ['$event.target.innerWidth'])
-    onResize(width: number) {
+    onResize() {
         this.checkOverflow()
     }
 
@@ -53,18 +59,31 @@ export class HeaderComponent implements OnInit, AfterViewInit{
 
     public checkOverflow(){
         setTimeout(() =>{
-            let parentWidth = this.categories.nativeElement.offsetWidth;
-             this.children.map((p:any , index:number) => {
-                parentWidth = parentWidth - (p.nativeElement.offsetWidth + 32)
-                if(parentWidth <= 0 && !this.remaining.includes(this.categoryData[index])){
-                    this.remaining = [...this.remaining,this.categoryData[index]] 
-                }
-
-                this.cdr.detectChanges()
+            let parentOffsetWidth = this.categories.nativeElement.offsetWidth;
+            let parentScrollWidth = this.categories.nativeElement.scrollWidth;
+            if(parentScrollWidth > parentOffsetWidth){
+                this.showOtherData = true;
+                parentOffsetWidth+=55;
+                this.otherData = []
+                this.children.map((p:any , index:number) => {
+                   parentOffsetWidth = parentOffsetWidth  - (p.nativeElement.offsetWidth + 32)
+                   if(parentOffsetWidth <= 0 && !this.otherData.includes(this.categoryData[index])){
+                       this.otherData = [...this.otherData,this.categoryData[index]] 
+                   }
+                   this.cdr.detectChanges()
+               })
             }
-            )
         },0)
 
+    }
+
+    public onToggle(){
+        this.showOtherCategories = !this.showOtherCategories;
+        console.log(this.otherData)
+    }
+
+    public onMenuToggle(){
+        this.menuOpen = !this.menuOpen
     }
 }
 
