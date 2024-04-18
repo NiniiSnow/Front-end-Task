@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PopularNews } from '../../models/models';
 
 @Component({
     selector: 'app-popular-news',
@@ -7,6 +8,5 @@ import { Component, Input } from '@angular/core';
     standalone: true
 })
 export class PopularNewsComponent {
-  @Input() imgUrl:string;
-  @Input() description:string;
+  @Input() data:PopularNews;
 }
