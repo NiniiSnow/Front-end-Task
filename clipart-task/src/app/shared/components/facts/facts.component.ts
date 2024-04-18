@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Fact } from '../../models/models';
 
 @Component({
   selector: 'app-facts',
@@ -9,8 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./facts.component.scss']
 })
 export class FactsComponent {
-  @Input() public imgUrl:string;
-  @Input() public description:string;
+  @Input() public data:Fact;
 
   constructor(){}
 }

@@ -1,6 +1,70 @@
 <div class="main">
-    <p>home works!</p>
+    <div>
+        <div class="flex gap-8 pt-[40px] flex-col xl:flex-row">
 
-    <div class="w-full h-full flex  gap-3 self-stretch">
+            <div class="grow  xl:max-w-[840px] 2xl:max-w-[925px] flex h-[496px] sm:h-[606px]  bg-white gap-3 rounded-2xl">
+                <swiper-container 
+                navigation="true" 
+                pagination="true" 
+                slides-per-view="1" 
+                auto-play="true"
+                style="--swiper-navigation-color:black; 
+                --swiper-pagination-color:#fff ;--swiper-theme-color: #007aff;"
+                #swiper>
+                    @for (slide of slides$|async; track $index) {
+                        <swiper-slide>
+                            <div class="w-full">
+                                <app-main-slides [data]="slide"></app-main-slides>
+                            </div>
+                        </swiper-slide>
+                    }
+                </swiper-container>
+            </div>
+
+            <div class="flex flex-col sm:flex-row xl:flex-col gap-[60px] w-full">
+                <div 
+                class="w-full  lg:w-[240px] xl:w-[264px] 2xl:w-[304px] min-w-[264px] 
+                h-[360px] sm:h-[330px] lg:h-[618px] overflow-y-scroll  bg-white rounded-[1.25rem] gap-7 px-3 py-6 flex flex-col" 
+                #allNews>
+                    <h2 class="font-noto font-semibold text-[1.25rem] leading-7">ყველა სიახლე</h2>
+                    <div class="flex flex-col">
+                        @for (news of news$ | async; track $index) {
+                            <app-news [data]="news" ></app-news>
+                        }
+                    </div>
+                </div>
+                <div 
+                class="w-full  lg:w-[240px] xl:w-[264px] 2xl:w-[304px] min-w-[264px] 
+                h-[360px] sm:h-[330px] lg:h-[618px] overflow-y-scroll  bg-white rounded-[1.25rem] gap-7 px-3 py-6 flex flex-col" 
+                #allNews>
+                    <h2 class="font-noto font-semibold text-[1.25rem] leading-7">პოპულარული</h2>
+                    <div class="flex flex-col">
+                        @for (news of popularNews$ | async; track $index) {
+                            <app-popular-news [data]="news" ></app-popular-news>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- <div class="flex  pt-[40px] w-full ">
+            <div>
+                <div 
+                class="grow max-w-[925px] flex  flex-col  h-fit bg-white rounded-2xl gap-7 px-6 py-9" >
+                    <h2 class="font-noto font-semibold text-[1.25rem] leading-7">ცნობილი ფაქტები</h2>
+                    <div>
+                        <swiper-container  slides-per-view="2.5" space-between="30">
+                            @for (fact of facts$ | async; track $index) {
+                                <swiper-slide class="w-fit">
+                                    <div class="w-fit">
+                                        <app-facts [data]="fact" ></app-facts>
+                                    </div>
+                                </swiper-slide>
+                            }
+                        </swiper-container>
+                    </div>
+                </div>
+        </div> -->
     </div>
 </div>

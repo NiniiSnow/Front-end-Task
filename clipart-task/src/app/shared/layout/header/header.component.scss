@@ -16,7 +16,7 @@
 }
 
 .other-button {
-    @apply hidden xl:flex items-center gap-2  font-noto text-base font-medium tracking-[-0.015rem]
+    @apply hidden lg:flex items-center gap-2  font-noto text-base font-medium tracking-[-0.015rem]
         text-custom-black-600 hover:text-custom-purple 
         rounded-[10px] shrink-0   
 }

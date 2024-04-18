@@ -1,3 +1,43 @@
 .main{
-    @apply flex flex-col px-4 sm:px-[57px] xl:px-[114px] 2xl:px-[304px]
+    @apply flex flex-col px-4 sm:px-[57px] xl:px-[114px] 2xl:px-[304px] h-screen
 }
+
+
+swiper-container{
+    width: 100%;
+    height: fit;
+    --swiper-pagination-color: #f5f8ff !important;
+
+}
+
+swiper-slide{
+    width: fit !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+color: black;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    @apply bg-black
+}
+
+.swiper-pagination, .swiper-pagination-bullets,.swiper-pagination-bullets {
+    top: 20px !important;
+}
+
+.swiper-pagination{
+    background-color: black !important;
+}
+:host {
+    --swiper-pagination-color: #f5f8ff !important;
+}
+
+div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal{
+   background-color: black !important;
+}
+
+// *{
+// border: 1px solid black;
+// }

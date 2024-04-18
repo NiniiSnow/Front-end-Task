@@ -2,14 +2,14 @@
     <div class="time-description">
         <img src="assets/svg/clock.svg" alt="clock-icon">
         <div class="time">
-            <p> 7:30</p>
+            <p> {{ data.date | date: 'HH:mm'}}</p>
             <p >•</p>
-            <p>02.01.2023</p>
+            <p>{{ data.date | date: 'dd.MM.yyyy' }}</p>
         </div>
     </div>
     <div class="text-container">
         <h1 class="description">
-            დღეიდან ასაწონად განკუთვნილი პოლიეთილენის პარკები აიკრძალა
+            {{data.description}}
         </h1>
     </div>
 </div>

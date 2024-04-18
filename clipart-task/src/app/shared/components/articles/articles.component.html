@@ -3,15 +3,15 @@
         <img src="assets/images/image1.png"  class="h-auto max-w-full"  alt="article-image">
     <div>
         <button class="details">
-            12/08/2023
+            {{ data.date | date: 'dd.MM.yyyy' }}
         </button>
         <button class="details">
-            პოლიტიკა
+            {{ data.category }}
         </button>
     </div>
     <div class="text-container">
         <p class="description">
-            ქვემო ქართლის რეგიონში 20 მლნ ლარამდე ღირებულების 
+            {{ data.description}}
         </p>
     </div>
 </div>

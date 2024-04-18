@@ -15,6 +15,8 @@ export interface News {
 }
 export interface Article {
     id:number,
+    date:string,
+    category:string,
     imageUrl:string,
     description:string
 }
